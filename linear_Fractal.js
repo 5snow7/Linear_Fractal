@@ -75,6 +75,14 @@ function C(t,len,lev){
     C(t,len,lev-1);t.rt(90);	
 	}
 }
+let ang=5;
+
+function spin(t,len,total){
+	if(total>800){}
+	else{if(ang>360){ang=0;}
+	   ang+=3.7;t.fd(len);t.rt(ang);spin(t,len,total+1);
+
+}}
 
 function test1(){
 	clear_Can();
@@ -89,6 +97,7 @@ function test1(){
 		case 5:tS.set1(700,470,-90);hilbert(tS,10,6,1);break;
 		case 6:tS.set1(200,470,-60);siepTri(tS,500,6);break;
 		case 7:tS.set1(500,400,0);C(tS,6,11);break;
+		case 8:tS.set1(250,100,0);spin(tS,15,0);break;
 	}
 	
 }
